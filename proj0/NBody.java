@@ -18,7 +18,7 @@ public class NBody
 	Planet[] Planets = new Planet[temp];
 	while(temp > 0)
 	{
-	    Planets[5 - temp] = new Planet(in.readDouble(), in.readDouble(), in.readDouble(), in.readDouble(), in.readDouble(), "images/" + in.readString()/*pay attention there is a "images"*/);
+	    Planets[5 - temp] = new Planet(in.readDouble(), in.readDouble(), in.readDouble(), in.readDouble(), in.readDouble(),  in.readString());
 	    temp--;
 	}
 	return Planets;
