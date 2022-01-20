@@ -46,14 +46,8 @@ public class NBody
 	    
 	    for(int i = 0; i < Planets.length; i++)
 	    {
-		for(int j = 0; j < Planets.length; j++)
-		{
-		    if(j == i)
-			break;
-		    else
-			xForces[i] += Planets[i].calcForceExertedByX(Planets[j]);
-			yForces[i] += Planets[i].calcForceExertedByY(Planets[j]);
-		}
+		xForces[i] = Planets[i].calcNetForceExertedByX(Planets);
+		yForces[i] = Planets[i].calcNetForceExertedByY(Planets);
 	    }
 	    for(int i = 0; i < Planets.length; i++)
 		Planets[i].update(dt, xForces[i], yForces[i]);

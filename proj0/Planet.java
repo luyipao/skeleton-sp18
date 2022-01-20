@@ -41,17 +41,42 @@ public class Planet
 	double force = this.calcForceExertedBy(a);
 	double dist = this.calcDistance(a);
 	double xdist = this.xxPos - a.xxPos;
-	double xforce = xdist * force / dist;
-	return (xforce >= 0) ? xforce : -xforce;
+	double xforce = - xdist * force / dist;
+	return xforce;
     }
     public double calcForceExertedByY(Planet a)
     {
 	double force = this.calcForceExertedBy(a);
 	double dist = this.calcDistance(a);
 	double ydist = this.yyPos - a.yyPos;
-	double yforce = ydist * force / dist;
-	return (yforce >= 0) ? yforce : -yforce;
+	double yforce = - ydist * force / dist;
+	return yforce;
     }
+    public double calcNetForceExertedByX(Planet[] planets)
+    {
+	double xforce = 0;
+	for(Planet p : planets)
+	{
+	    if(this.equals(p))
+		continue;
+	    else
+		xforce += this.calcForceExertedByX(p);
+	}
+	return xforce;
+    }
+    public double calcNetForceExertedByY(Planet[] planets)
+    {
+	double yforce = 0;
+	for(Planet p : planets)
+	{
+	    if(this.equals(p))
+		continue;
+	    else
+		yforce += this.calcForceExertedByY(p);
+	}
+	return yforce;
+    }
+    
     public void update(double dt, double xforce, double yforce)
     {
 	this.xxVel += dt * xforce / this.mass;
