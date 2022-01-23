@@ -85,7 +85,8 @@ public class IntList {
 	{
 	    while(B != null)
 	    {
-		A.IntList(B.first, null);
+		A.first = B.first;
+		A.rest = null;
 		B = B.rest;
 		A = A.rest;
 	    }
