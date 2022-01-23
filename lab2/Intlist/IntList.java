@@ -82,13 +82,16 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B)
     {
-	IntList help = A;
-	while(help.rest != null)
+	if(A == null)
+	    return B;
+	else
 	{
-	    help = help.rest;
+	    IntList help = A;
+	    while(help.rest != null)
+		help = help.rest;
+	    help.rest = B;
+	    return A;
 	}
-	help.rest = B;
-	return A;
     }
 
     /**
@@ -119,10 +122,13 @@ public class IntList {
 	IntList A = new IntList(1, null);
 	IntList B = new IntList(2, null);
 	IntList.dcatenate(A, B);
+	IntList D = null;
+	D.first = 0;
 	IntList C = IntList.catenate(A, B);
 	System.out.println(A.first);
 	System.out.println(A.rest.first);
 	System.out.println(C.rest.first);
+	System.out.println(D.first);
 	
     }
 
