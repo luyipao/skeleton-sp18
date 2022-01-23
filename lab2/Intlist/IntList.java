@@ -80,15 +80,24 @@ public class IntList {
      * *  elements of B.  May modify items of A. Don't use 'new'.
      */
 
-    public static void dcatenate(IntList A, IntList B) {
-        if(A == null)
-	    A = B;
+    public static IntList dcatenate(IntList A, IntList B) {
+	if(A == null && B == null)
+	{
+	}
+	else if(A == null)
+	    while(B != null)
+	    {
+		A = IntList(B.first, null);
+		B = B.rest;
+		
+	    }	
 	else
 	{
 	    while(A.rest != null)
 		A = A.rest;
 	    A.rest = B;
 	}
+	return null;
     }
 
     /**
@@ -111,10 +120,6 @@ public class IntList {
 	return a.rest;
         
     }
-
-
-
-
 
 
 
