@@ -96,7 +96,12 @@ public class IntList {
 	{
 	    while(A.rest != null)
 		A = A.rest;
-	    A.rest = B;
+	    while(B.rest != null)
+	    {
+		A.rest = new IntList(B.first, null);
+		A = A.rest;
+		B = B.rest;
+	    }
 	}
 	return null;
     }
@@ -118,12 +123,19 @@ public class IntList {
 	    help.rest = new IntList(B.first, null);
 	    B = B.rest;
 	}
-	return a.rest;   
+	return null;
+	
     }
-
-
-
-
+/*    
+    private static void main(String[] args)
+    {
+	IntList A = new IntList(1, null);
+	IntList B = new IntList(2, null);
+	IntList.dcatenate(A, B);
+	System.out.println(A.first);
+	System.out.println(A.rest.first);
+    }
+*/
 
 
 
