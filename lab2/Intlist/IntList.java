@@ -81,16 +81,16 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-	if(A == null && B == null)
+	if(A == null)
 	{
-	}
-	else if(A == null)
 	    while(B != null)
 	    {
-		A = IntList(B.first, null);
+		A.IntList(B.first, null);
 		B = B.rest;
-		
-	    }	
+		A = A.rest;
+	    }
+	    
+	}
 	else
 	{
 	    while(A.rest != null)
@@ -117,8 +117,7 @@ public class IntList {
 	    help.rest = new IntList(B.first, null);
 	    B = B.rest;
 	}
-	return a.rest;
-        
+	return a.rest;   
     }
 
 
