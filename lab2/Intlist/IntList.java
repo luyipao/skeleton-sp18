@@ -83,11 +83,11 @@ public class IntList {
     public static IntList dcatenate(IntList A, IntList B)
     {
 	IntList help = A;
-	while(help != null)
+	while(help.rest != null)
 	{
 	    help = help.rest;
 	}
-	help = B;
+	help.rest = B;
 	return A;
     }
 
@@ -102,25 +102,30 @@ public class IntList {
 	{
 	    help.rest = new IntList(A.first, null);
 	    A = A.rest;
+	    help = help.rest;
 	}
 	while(B != null)
 	{
 	    help.rest = new IntList(B.first, null);
 	    B = B.rest;
+	    help = help.rest;
 	}
 	return a.rest;
 	
     }
-/*    
-    private static void main(String[] args)
+    
+    public static void main(String[] args)
     {
 	IntList A = new IntList(1, null);
 	IntList B = new IntList(2, null);
 	IntList.dcatenate(A, B);
+	IntList C = IntList.catenate(A, B);
 	System.out.println(A.first);
 	System.out.println(A.rest.first);
+	System.out.println(C.rest.first);
+	
     }
-*/
+
 
 
 
