@@ -86,18 +86,15 @@ public class LinkedListDequeTest {
 		System.out.println("running addLast/removeLast test.");
 		LinkedListDeque<Integer> lld2 = new LinkedListDeque<>();
 		boolean pased = checkEmpty(true, lld2.isEmpty());
-		for(int i = 0; i < 5; i++)
-			lld2.addFirst(i);
-		for(int i = 5; i < 10; i ++)
-			lld2.addLast(i);
-		lld2.addFirst(99);
-		lld2.addLast(99);
-		lld2.printDeque();
-		lld2.removeLast();
-		lld2.printDeque();
 
-		lld2.removeFirst();
-		lld2.printDeque();
+		lld2.addFirst(0);
+		lld2.addFirst(1);
+		System.out.println(lld2.removeLast());
+		System.out.println(lld2.removeLast());
+		if(lld2.isEmpty())
+			System.out.println("empty");
+		lld2.addFirst(5);
+		System.out.println(lld2.removeLast());
 	}
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");

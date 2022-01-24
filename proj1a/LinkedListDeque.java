@@ -59,7 +59,7 @@ public class LinkedListDeque<T> {
 
     public boolean isEmpty()
     {
-        return first == null;
+        return (first == null && size == 0);
     }
     public int size()
     {
@@ -86,7 +86,7 @@ public class LinkedListDeque<T> {
             sentinel.prev = sentinel;
             sentinel.next = sentinel;
             size--;
-            return null;
+            return temp;
         }
         else
         {
