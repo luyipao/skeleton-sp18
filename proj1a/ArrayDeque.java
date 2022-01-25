@@ -99,7 +99,7 @@ public class ArrayDeque<T>
             }
             items = temp;
             front = capacity / 4 - 1;
-            back = capacity * 3 / 4;
+            back = front + size + 1;
             capacity /= 2;
         }
 

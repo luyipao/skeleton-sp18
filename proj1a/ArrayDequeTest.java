@@ -66,32 +66,32 @@ public class ArrayDequeTest {
     }
     public static void addRemoveLastTest()
     {
+        int a;
         System.out.println("running addLast/removeLast test.");
-        ArrayDeque<Integer> l = new ArrayDeque<>();
-        boolean pased = checkEmpty(true, l.isEmpty());
-        l.addFirst(0);
-        int a = l.get(0);
-        l.addLast(2);
-        a = l.removeFirst();
-        l.addLast(4);
-        a = l.removeLast();
-        a = l.get(0);
-        a = l.get(0);
-        a = l.get(0);
-        l.addFirst(9);
-        a = l.get(0);
-        a = l.removeLast();
-        a = l.get(0);
-        l.addFirst(13);
-        a = l.get(1);
-        a = l.get(1);
-        a = l.get(0);
-        l.addFirst(17);
-        a = l.get(1);
-        a = l.get(2);
-        l.addLast(20);
-        l.addFirst(21);
-        a = l.removeFirst();
+        ArrayDeque<Integer> ArrayDeque = new ArrayDeque<>();
+        ArrayDeque.addFirst(0);
+        ArrayDeque.addLast(1);
+        ArrayDeque.addFirst(2);
+        ArrayDeque.addFirst(3);
+        ArrayDeque.addFirst(4);
+        ArrayDeque.get(4)      ;
+        ArrayDeque.get(0)      ;
+        ArrayDeque.addLast(7) ;
+    ArrayDeque.get(3)      ;
+        a=ArrayDeque.get(1)     ;
+        ArrayDeque.addFirst(10);
+        a=ArrayDeque.removeFirst()    ;
+        ArrayDeque.addLast(12);
+        ArrayDeque.addLast(13);
+        a=ArrayDeque.removeLast()  ;
+        a = ArrayDeque.removeFirst();
+        a= ArrayDeque.get(2);
+        a = ArrayDeque.removeFirst();
+        ArrayDeque.addLast(18);
+        a = ArrayDeque.removeFirst();
+        a = ArrayDeque.removeFirst() ;
+        a = ArrayDeque.removeFirst();
+        a = ArrayDeque.removeLast();
     }
     public static void addremovetest()
     {
