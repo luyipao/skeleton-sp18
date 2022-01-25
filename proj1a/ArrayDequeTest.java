@@ -101,9 +101,10 @@ public class ArrayDequeTest {
             l.addLast(i);
             a = l.get(0);
         }
-        for(int i = 0; i < 16; i++)
-            a = l.removeFirst();
-    }
+
+        System.out.println(l.get(15));
+
+     }
 
     public static void main(String[] args) {
         System.out.println("Running tests.\n");

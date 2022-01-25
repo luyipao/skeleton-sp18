@@ -69,7 +69,7 @@ public class ArrayDeque<T>
     }
     public T get(int index)
     {
-        if(index > size)
+        if(index >= size)
             return null;
         index =  (front + index + 1) % capacity;
         return items[index];
