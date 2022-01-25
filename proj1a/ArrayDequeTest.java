@@ -93,10 +93,23 @@ public class ArrayDequeTest {
         l.addFirst(21);
         a = l.removeFirst();
     }
+    public static void addremovetest()
+    {
+        int a;
+        ArrayDeque<Integer> l = new ArrayDeque<>();
+        for(int i = 0; i < 16; i++) {
+            l.addLast(i);
+            a = l.get(0);
+        }
+        for(int i = 0; i < 16; i++)
+            a = l.removeFirst();
+    }
+
     public static void main(String[] args) {
         System.out.println("Running tests.\n");
         addIsEmptySizeTest();
         addRemoveTest();
         addRemoveLastTest();
+        addremovetest();
     }
 }

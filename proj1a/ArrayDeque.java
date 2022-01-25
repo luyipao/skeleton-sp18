@@ -81,7 +81,7 @@ public class ArrayDeque<T>
             T[] temp = (T[]) new Object[capacity * 2];
             for(int i = 0; i < size; i++)
             {
-                temp[size/2 + i] = items[front % capacity];
+                temp[size/2 + i] = items[(front + 1) % capacity];
                 front++;
             }
             items = temp;
@@ -94,7 +94,7 @@ public class ArrayDeque<T>
             T[] temp = (T[]) new Object[capacity / 2];
             for(int i = 0; i < size; i++)
             {
-                temp[capacity/4 + i] = items[front % capacity];
+                temp[capacity/4 + i] = items[(front + 1) % capacity];
                 front++;
             }
             items = temp;
