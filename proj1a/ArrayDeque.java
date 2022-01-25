@@ -44,7 +44,7 @@ public class ArrayDeque<T>
     }
     public T removeFirst()
     {
-        if(items[front + 1] == null)
+        if(items[(front + 1) % capacity] == null)
             return null;
         front = (front + 1) % capacity;
         T temp = items[front];
@@ -55,10 +55,12 @@ public class ArrayDeque<T>
     }
     public T removeLast()
     {
-        if(items[back - 1] == null)
+        int t = (back - 1) % capacity;
+        if(t < 0)
+            t += capacity;
+        if(items[t] == null)
             return null;
-        back = (back - 1) % capacity;
-        back = (back > 0) ? back : back + capacity;
+        back = t;
         T temp = items[back];
         items[back] = null;
         size--;
@@ -92,12 +94,12 @@ public class ArrayDeque<T>
             T[] temp = (T[]) new Object[capacity / 2];
             for(int i = 0; i < size; i++)
             {
-                temp[size/2 + i] = items[front % capacity];
+                temp[capacity/4 + i] = items[front % capacity];
                 front++;
             }
             items = temp;
-            front = size / 2 - 1;
-            back = size * 3 / 2;
+            front = capacity / 4 - 1;
+            back = capacity * 3 / 4;
             capacity /= 2;
         }
 

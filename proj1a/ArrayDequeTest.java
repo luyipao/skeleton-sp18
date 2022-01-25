@@ -67,17 +67,31 @@ public class ArrayDequeTest {
     public static void addRemoveLastTest()
     {
         System.out.println("running addLast/removeLast test.");
-        ArrayDeque<Integer> lld2 = new ArrayDeque<>();
-        boolean pased = checkEmpty(true, lld2.isEmpty());
-
-        lld2.addFirst(0);
-        lld2.addFirst(1);
-        System.out.println(lld2.removeLast());
-        System.out.println(lld2.removeLast());
-        if(lld2.isEmpty())
-            System.out.println("empty");
-        lld2.addFirst(5);
-        System.out.println(lld2.removeLast());
+        ArrayDeque<Integer> l = new ArrayDeque<>();
+        boolean pased = checkEmpty(true, l.isEmpty());
+        l.addFirst(0);
+        int a = l.get(0);
+        l.addLast(2);
+        a = l.removeFirst();
+        l.addLast(4);
+        a = l.removeLast();
+        a = l.get(0);
+        a = l.get(0);
+        a = l.get(0);
+        l.addFirst(9);
+        a = l.get(0);
+        a = l.removeLast();
+        a = l.get(0);
+        l.addFirst(13);
+        a = l.get(1);
+        a = l.get(1);
+        a = l.get(0);
+        l.addFirst(17);
+        a = l.get(1);
+        a = l.get(2);
+        l.addLast(20);
+        l.addFirst(21);
+        a = l.removeFirst();
     }
     public static void main(String[] args) {
         System.out.println("Running tests.\n");
