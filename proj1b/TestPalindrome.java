@@ -31,11 +31,11 @@ public class TestPalindrome {
     @Test
     public void isPalindromeTest2() {
 
-
+        assertTrue(palindrome.isPalindrome("A", obo));
         assertTrue(palindrome.isPalindrome("", obo));
         assertTrue(palindrome.isPalindrome("1111222", obo));
         assertTrue(palindrome.isPalindrome(" ", obo));
-        assertTrue(palindrome.isPalindrome("&", obo));
+        assertTrue(palindrome.isPalindrome("a", obo));
         assertTrue(palindrome.isPalindrome("flake", obo));
         assertTrue(palindrome.isPalindrome("%&", obo));
         assertFalse(palindrome.isPalindrome("noon", obo));
