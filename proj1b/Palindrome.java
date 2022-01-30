@@ -1,9 +1,9 @@
 public class Palindrome {
     /** I use ArrayDeque to instanlize*/
     static private Deque<Character> privatewordToDeque(String word) {
-        Deque<Character> deque = new ArrayDeque<Character>();
+        Deque<Character> deque = new ArrayDeque<>();
         char[] charword = word.toCharArray();
-        for(int i = 0; i < charword.length; i++) {
+        for (int i = 0; i < charword.length; i++) {
             deque.addLast(charword[i]);
         }
         return deque;
@@ -25,12 +25,15 @@ public class Palindrome {
         return true;
     }
 
-
     /**overload isPalindrome using the `CharacterComparator`*/
     public boolean isPalindrome(String word, CharacterComparator cc) {
         Deque<Character> deque = Palindrome.privatewordToDeque(word);
+        char x;
+        char y;
         while (deque.size() > 1) {
-            if (!cc.equalChars(deque.removeFirst(), deque.removeLast())) {
+            x = deque.removeFirst();
+            y = deque.removeLast();
+            if (!cc.equalChars(x, y)) {
                 return false;
             }
         }
