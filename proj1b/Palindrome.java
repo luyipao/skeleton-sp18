@@ -28,10 +28,9 @@ public class Palindrome {
 
     /**overload isPalindrome using the `CharacterComparator`*/
     public boolean isPalindrome(String word, CharacterComparator cc) {
-        cc = new OffByOne();
         Deque<Character> deque = Palindrome.privatewordToDeque(word);
         while (deque.size() > 1) {
-            if (! cc.equalChars(deque.removeFirst(), deque.removeLast())) {
+            if (!cc.equalChars(deque.removeFirst(), deque.removeLast())) {
                 return false;
             }
         }
