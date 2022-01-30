@@ -28,12 +28,8 @@ public class Palindrome {
     /**overload isPalindrome using the `CharacterComparator`*/
     public boolean isPalindrome(String word, CharacterComparator cc) {
         Deque<Character> deque = Palindrome.privatewordToDeque(word);
-        char x;
-        char y;
         while (deque.size() > 1) {
-            x = deque.removeFirst();
-            y = deque.removeLast();
-            if (!cc.equalChars(x, y)) {
+            if (!cc.equalChars(deque.removeFirst(), deque.removeLast())) {
                 return false;
             }
         }
