@@ -1,6 +1,7 @@
 import org.junit.Test;
-import static org.junit.Assert.*;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class TestOffByOne {
     // You must use this CharacterComparator and not instantiate
@@ -24,13 +25,14 @@ public class TestOffByOne {
         OffByN obn1 = new OffByN(1);
         assertTrue(palindrome.isPalindrome("acdb", obn1));
     }
+
     @Test
     public void equalCharsTest2() {
         OffByN obn2 = new OffByN(2);
         assertTrue(palindrome.isPalindrome("abdc", obn2));
     }
+
     public void main(String[] args) {
         equalCharsTest();
-
     }
 }

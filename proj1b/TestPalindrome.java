@@ -22,6 +22,8 @@ public class TestPalindrome {
     public void isPalindromeTest() {
         assertTrue(palindrome.isPalindrome(""));
         assertTrue(palindrome.isPalindrome("A"));
+        assertFalse(palindrome.isPalindrome("AaaBa"));
+        assertTrue(palindrome.isPalindrome("a"));
         assertTrue(palindrome.isPalindrome("!"));
         assertTrue(palindrome.isPalindrome("racecar"));
         assertTrue(palindrome.isPalindrome("1"));
@@ -39,13 +41,11 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("flake", obo));
         assertTrue(palindrome.isPalindrome("%&", obo));
         assertFalse(palindrome.isPalindrome("noon", obo));
-
     }
 
     public void main(String args) {
         testWordToDeque();
         isPalindromeTest();
         isPalindromeTest2();
-
     }
 }
