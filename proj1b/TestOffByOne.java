@@ -20,18 +20,10 @@ public class TestOffByOne {
         assertTrue(palindrome.isPalindrome("flake", offByOne));
         /** assertTrue(palindrome.isPalindrome("%&", offByOne)); */
         assertFalse(palindrome.isPalindrome("noon", offByOne));
-    }
-
-    @Test
-    public void equalCharsTest1() {
-        OffByN obn1 = new OffByN(1);
-        assertTrue(palindrome.isPalindrome("acdb", obn1));
-    }
-
-    @Test
-    public void equalCharsTest2() {
-        OffByN obn2 = new OffByN(2);
-        assertTrue(palindrome.isPalindrome("abdc", obn2));
+        assertTrue(offByOne.equalChars('a', 'b'));
+        assertFalse(offByOne.equalChars('r', 'Q'));
+        assertFalse(offByOne.equalChars('D', 'B'));
+        assertTrue(offByOne.equalChars('&', '%'));
     }
 
     public void main(String[] args) {
