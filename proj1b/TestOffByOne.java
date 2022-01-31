@@ -14,6 +14,7 @@ public class TestOffByOne {
         assertFalse(palindrome.isPalindrome("1  3", offByOne));
         assertTrue(palindrome.isPalindrome("1111222", offByOne));
         assertTrue(palindrome.isPalindrome("a", offByOne));
+        assertFalse(palindrome.isPalindrome("Aa", offByOne));
         assertTrue(palindrome.isPalindrome("&", offByOne));
         assertTrue(palindrome.isPalindrome("flake", offByOne));
         assertTrue(palindrome.isPalindrome("%&", offByOne));
