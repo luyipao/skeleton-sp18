@@ -38,7 +38,7 @@ public class TestArrayDequeGold {
             x = sad2.removeLast();
         } while (x >= 5);
         for(int i = 0; i < sad2.size(); i ++) {
-            assertTrue("removeLast()",(sad2.get(i) == null || sad2.get(i) < 5));
+            assertEquals("removeLast()",true,(sad2.get(i) == null || sad2.get(i) < 5));
         }
     }
 /**
